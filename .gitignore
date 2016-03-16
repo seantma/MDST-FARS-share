@@ -1,6 +1,6 @@
 .ipynb_checkpoints
 .DS_Store
-*.csv
+all*.csv
 /train
 /test
 /data
