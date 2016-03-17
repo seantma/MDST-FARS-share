@@ -91,7 +91,7 @@ param['scale_pos_weight'] = ratio
 param['eta'] = 0.05
 param['max_depth'] = 7
 param['eval_metric'] = 'auc'
-# param['silent'] = 1
+param['silent'] = 1
 param['min_child_weight'] = 1
 param['subsample'] = 0.7
 param['colsample_bytree'] = 0.7
@@ -136,12 +136,13 @@ test.idxmax()
 # In[26]:
 
 num_round = test.idxmax()
+print("best_round = ", num_round)
 
 
 # In[27]:
 
 bst = xgb.train(param, dtrain, num_round)
-bst
+print("bst", bst)
 
 
 # In[28]:
@@ -161,8 +162,6 @@ submit = pd.DataFrame(data={'ID': alltest_df['ID'], 'DRUNK_DR': ypred})
 
 submit.to_csv('fars_submit_xgb003_production.csv', index = False)
 
-
-# In[ ]:
 
 
 
