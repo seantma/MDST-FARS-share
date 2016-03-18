@@ -88,6 +88,7 @@ param = {'max_depth': 12,
          'alpha': 0,
          'lambda': 1,
          'nthread': 8,
+         'silent': 1,
          'objective': 'binary:logistic'}
 
 
@@ -109,8 +110,8 @@ print("Saving the model")
 bst.save_model('./models/xgb_acc_per.model')
 bst.dump_model('./models/xgb_raw_acc_per.txt')
 
-dtrain.save_binary('./models/binary/dtrain.buffer')
-deval.save_binary('./models/binary/deval.buffer')
+#dtrain.save_binary('./models/binary/dtrain.buffer')
+#deval.save_binary('./models/binary/deval.buffer')
 
 #get_ipython().magic(u'xdel dtrain')
 #get_ipython().magic(u'xdel deval')
@@ -147,7 +148,7 @@ preds = bst.predict(dtest)
 
 # In[25]:
 
-dtest.save_binary('./models/binary/dtest.buffer')
+#dtest.save_binary('./models/binary/dtest.buffer')
 
 
 # In[27]:
