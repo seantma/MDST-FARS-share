@@ -4,3 +4,4 @@ all*.csv
 /train
 /test
 /data
+/data_zip
