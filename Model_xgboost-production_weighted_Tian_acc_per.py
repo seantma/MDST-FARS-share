@@ -37,9 +37,9 @@ y = temp['DRUNK_DR']
 
 # In[7]:
 
-train_x = Xtrain.drop('ID', axis= 1, inplace=True)
+Xtrain.drop('ID', axis= 1, inplace=True)
 train_y = y
-test_x = Xtest.drop('ID', axis= 1, inplace=True)
+Xtest.drop('ID', axis= 1, inplace=True)
 
 # error AttributeError: 'NoneType' object has no attribute 'fillna'
 # train_x.fillna(-1, axis=0, inplace= True)
@@ -48,9 +48,9 @@ test_x = Xtest.drop('ID', axis= 1, inplace=True)
 
 # In[8]:
 
-trainX = train_x
+trainX = Xtrain
 trainY = train_y.astype(int)
-testX = test_x
+testX = Xtest
 
 
 # In[9]:
@@ -114,19 +114,21 @@ param['nthread'] = 8
 
 # In[11]:
 
-bst_cv = xgb.cv(param, dtrain, num_boost_round=1000, nfold=5, seed=0)
+#bst_cv = xgb.cv(param, dtrain, num_boost_round=1000, nfold=5, seed=0)
 
 
 # In[12]:
 
-tst = pd.DataFrame(bst_cv)
-test = tst['train-auc-mean']-tst['train-auc-std']
-test.idxmax()
+# tst = pd.DataFrame(bst_cv)
+# test = tst['train-auc-mean']-tst['train-auc-std']
+# test.idxmax()
 
 
 # In[13]:
 
-num_round = test.idxmax()
+#num_round = test.idxmax()
+
+num_round = 100
 
 
 # In[14]:
