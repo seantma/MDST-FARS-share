@@ -11,8 +11,8 @@ import random
 
 # In[2]:
 
-import matplotlib.pyplot as plt
-get_ipython().magic('matplotlib inline')
+# import matplotlib.pyplot as plt
+# get_ipython().magic('matplotlib inline')
 
 
 # In[3]:
