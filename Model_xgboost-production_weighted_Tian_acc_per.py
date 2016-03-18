@@ -48,9 +48,9 @@ test_x = Xtest.drop('ID', axis= 1, inplace=True)
 
 # In[8]:
 
-trainX = train_x.as_matrix()
+trainX = train_x
 trainY = train_y.astype(int)
-testX = test_x.as_matrix()
+testX = test_x
 
 
 # In[9]:
