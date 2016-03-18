@@ -1,0 +1,12 @@
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+Traceback (most recent call last):
+  File "Model_xgboost-production_weighted.py", line 15, in <module>
+    get_ipython().magic('matplotlib inline')
+NameError: name 'get_ipython' is not defined
