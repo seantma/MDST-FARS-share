@@ -41,8 +41,9 @@ train_x = Xtrain.drop('ID', axis= 1, inplace=True)
 train_y = y
 test_x = Xtest.drop('ID', axis= 1, inplace=True)
 
-train_x.fillna(-1, axis=0, inplace= True)
-test_x.fillna(-1, axis=0, inplace= True)
+# error AttributeError: 'NoneType' object has no attribute 'fillna'
+# train_x.fillna(-1, axis=0, inplace= True)
+# test_x.fillna(-1, axis=0, inplace= True)
 
 
 # In[8]:
