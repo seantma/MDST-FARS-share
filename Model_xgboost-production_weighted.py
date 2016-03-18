@@ -63,8 +63,8 @@ testX = test_x.as_matrix()
 
 # In[9]:
 
-dtrain = xgb.DMatrix(trainX, missing=[-1, 99, 999, np.nan], label=trainY)
-dtest = xgb.DMatrix(testX, missing=[-1, 99, 999, np.nan])
+dtrain = xgb.DMatrix(trainX, label=trainY)
+dtest = xgb.DMatrix(testX)
 
 
 # ### Parameter tuning
@@ -166,7 +166,7 @@ grouped_predict = predict_df.groupby('ID', as_index=False).mean()
 
 # In[37]:
 
-grouped_predict.to_csv('fars_submit_xgb004_production_weighted_missing.csv', index = False)
+grouped_predict.to_csv('fars_submit_xgb004_production_weighted.csv', index = False)
 
 
 
