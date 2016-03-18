@@ -8,46 +8,31 @@ import pandas as pd
 import numpy as np
 import random
 
-
-# In[2]:
-
-import matplotlib.pyplot as plt
-get_ipython().magic('matplotlib inline')
-
-
 # In[3]:
 
-alltrain_df = pd.read_csv('./all_train_nohash.csv')
-alltest_df = pd.read_csv('./all_test_nohash.csv')
+print("Load labels")
+label_file = pd.read_csv("./train/labels_ext.csv", index_col=0)
+Xtrain = pd.read_csv("./train/joint_accident_person_train_ext.csv", index_col=0)
+temp = pd.merge(Xtrain, label_file, on=['ID'], how='inner')
 
 
 # In[4]:
 
-drops = ["Unnamed: 0",
-         "VE_FORMS.y","HARM_EV.y","MAN_COLL.y","RAIL","TWAY_ID",
-         "CF1","CF2","CF3",
-         "VIN","VIN_1","VIN_2","VIN_3","VIN_4","VIN_5","VIN_6","VIN_7","VIN_8",
-         "VIN_9","VIN_10","VIN_11","VIN_12","MCARR_ID",
-         "VEH_NO.y","COUNTY.y", "DAY.y","MONTH.y","HOUR.y","MINUTE.y","ROAD_FNC.y",
-         "SCH_BUS.y","MAKE.y","MAK_MOD.y","BODY_TYP.y","MOD_YEAR.y",
-         "TOW_VEH.y","SPEC_USE.y","EMER_USE.y","ROLLOVER.y","IMPACT1.y","FIRE_EXP.y",
-         "CERT_NO"
-        ]
+# drops = ["Unnamed: 0",
+#          "VE_FORMS.y","HARM_EV.y","MAN_COLL.y","RAIL","TWAY_ID",
+#          "CF1","CF2","CF3",
+#          "VIN","VIN_1","VIN_2","VIN_3","VIN_4","VIN_5","VIN_6","VIN_7","VIN_8",
+#          "VIN_9","VIN_10","VIN_11","VIN_12","MCARR_ID",
+#          "VEH_NO.y","COUNTY.y", "DAY.y","MONTH.y","HOUR.y","MINUTE.y","ROAD_FNC.y",
+#          "SCH_BUS.y","MAKE.y","MAK_MOD.y","BODY_TYP.y","MOD_YEAR.y",
+#          "TOW_VEH.y","SPEC_USE.y","EMER_USE.y","ROLLOVER.y","IMPACT1.y","FIRE_EXP.y",
+#          "CERT_NO"
+#         ]
 
-
-# In[5]:
-
-for col in drops:
-    del alltrain_df[col]
-
-
-# In[6]:
-
-for col in drops:
-    del alltest_df[col]
 
 
 # In[7]:
+
 
 train_x = alltrain_df.drop(['DRUNK_DR','YEAR'], axis=1)
 train_y = alltrain_df['DRUNK_DR']

@@ -49,6 +49,9 @@ for col in drops:
 
 # In[7]:
 
+alltrain_df.fillna(-1, axis=0, inplace= True)
+alltest_df.fillna(-1, axis=0, inplace= True)
+
 train_x = alltrain_df.drop(['DRUNK_DR','YEAR'], axis=1)
 train_y = alltrain_df['DRUNK_DR']
 test_x = alltest_df
@@ -63,8 +66,8 @@ testX = test_x.as_matrix()
 
 # In[9]:
 
-dtrain = xgb.DMatrix(trainX, label=trainY)
-dtest = xgb.DMatrix(testX)
+dtrain = xgb.DMatrix(trainX, missing=-1, label=trainY)
+dtest = xgb.DMatrix(testX, missing=-1)
 
 
 # ### Parameter tuning
@@ -166,7 +169,7 @@ grouped_predict = predict_df.groupby('ID', as_index=False).mean()
 
 # In[37]:
 
-grouped_predict.to_csv('fars_submit_xgb004_production_weighted.csv', index = False)
+grouped_predict.to_csv('fars_submit_xgb004_production_weighted_missing.csv', index = False)
 
 
 
