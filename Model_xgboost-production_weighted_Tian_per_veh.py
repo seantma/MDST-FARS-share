@@ -12,9 +12,13 @@ import random
 
 print("Load labels")
 label_file = pd.read_csv("./train/labels_ext.csv", index_col=0)
-Xtrain = pd.read_csv("./train/joint_accident_person_train_ext.csv", index_col=0)
-temp = pd.merge(Xtrain, label_file, on=['ID'], how='inner')
+Xtrain = pd.read_csv("./train/joint_person_vehicle_train_ext.csv", index_col=0)
+Xtest = pd.read_csv("./test/joint_person_vehicle_test_ext.csv", index_col=0)
 
+ID= Xtest['ID'].astype(np.int64)
+
+temp = pd.merge(Xtrain, label_file, on=['ID'], how='inner')
+y = temp['DRUNK_DR']
 
 # In[4]:
 
@@ -33,10 +37,12 @@ temp = pd.merge(Xtrain, label_file, on=['ID'], how='inner')
 
 # In[7]:
 
+train_x = Xtrain.drop('ID', axis= 1, inplace=True)
+train_y = y
+test_x = Xtest.drop('ID', axis= 1, inplace=True)
 
-train_x = alltrain_df.drop(['DRUNK_DR','YEAR'], axis=1)
-train_y = alltrain_df['DRUNK_DR']
-test_x = alltest_df
+train_x.fillna(-1, axis=0, inplace= True)
+test_x.fillna(-1, axis=0, inplace= True)
 
 
 # In[8]:
@@ -48,8 +54,8 @@ testX = test_x.as_matrix()
 
 # In[9]:
 
-dtrain = xgb.DMatrix(trainX, label=trainY)
-dtest = xgb.DMatrix(testX)
+dtrain = xgb.DMatrix(trainX, missing=-1, label=trainY)
+dtest = xgb.DMatrix(testX, missing=-1)
 
 
 # ### Parameter tuning
@@ -125,7 +131,6 @@ num_round = test.idxmax()
 # In[14]:
 
 bst = xgb.train(param, dtrain, num_round)
-bst
 
 
 # In[15]:
@@ -151,10 +156,5 @@ grouped_predict = predict_df.groupby('ID', as_index=False).mean()
 
 # In[37]:
 
-grouped_predict.to_csv('fars_submit_xgb004_production_weighted.csv', index = False)
-
-
-# In[ ]:
-
-
+grouped_predict.to_csv('fars_submit_xgb005_production_weighted_Tian_per_veh.csv', index = False)
 
