@@ -44,7 +44,7 @@ y = temp['DRUNK_DR'].apply(lambda x: x*1 ).values
 
 # In[6]:
 
-get_ipython().magic(u'xdel temp')
+# get_ipython().magic(u'xdel temp')
 
 
 # In[7]:
@@ -60,13 +60,13 @@ Xtrain_c, Xeval, Ytrain_c, Yeval = train_test_split(Xtrain.values, y, test_size 
 
 # In[9]:
 
-get_ipython().magic(u'xdel Xtrain')
-get_ipython().magic(u'xdel label_file')
+#get_ipython().magic(u'xdel Xtrain')
+#get_ipython().magic(u'xdel label_file')
 
 
 # In[10]:
 
-get_ipython().magic(u'whos')
+# get_ipython().magic(u'whos')
 
 
 # In[11]:
@@ -112,8 +112,8 @@ bst.dump_model('./models/xgb_raw_acc_per.txt')
 dtrain.save_binary('./models/binary/dtrain.buffer')
 deval.save_binary('./models/binary/deval.buffer')
 
-get_ipython().magic(u'xdel dtrain')
-get_ipython().magic(u'xdel deval')
+#get_ipython().magic(u'xdel dtrain')
+#get_ipython().magic(u'xdel deval')
 
 
 # In[21]:
