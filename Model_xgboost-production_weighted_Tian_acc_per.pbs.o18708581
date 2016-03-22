@@ -1,0 +1,13 @@
+nyx5584
+nyx5584
+nyx5584
+nyx5584
+nyx5584
+nyx5584
+nyx5584
+nyx5584
+Load labels
+Traceback (most recent call last):
+  File "Model_xgboost-production_weighted_Tian_acc_per.py", line 51, in <module>
+    trainX = train_x.as_matrix()
+AttributeError: 'NoneType' object has no attribute 'as_matrix'

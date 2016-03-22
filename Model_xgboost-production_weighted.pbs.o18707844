@@ -1,0 +1,18 @@
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+nyx5556
+sys:1: DtypeWarning: Columns (28,59,60,68) have mixed types. Specify dtype option on import or set low_memory=False.
+sys:1: DtypeWarning: Columns (27,66) have mixed types. Specify dtype option on import or set low_memory=False.
+Traceback (most recent call last):
+  File "Model_xgboost-production_weighted.py", line 66, in <module>
+    dtrain = xgb.DMatrix(trainX, missing=[-1, 99, 999, np.nan], label=trainY)
+  File "/home/tehsheng/Projects/xgboost/python-package/xgboost/core.py", line 233, in __init__
+    self._init_from_npy2d(data, missing)
+  File "/home/tehsheng/Projects/xgboost/python-package/xgboost/core.py", line 285, in _init_from_npy2d
+    ctypes.c_float(missing),
+TypeError: a float is required

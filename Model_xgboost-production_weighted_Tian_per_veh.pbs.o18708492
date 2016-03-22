@@ -1,0 +1,13 @@
+nyx5432
+nyx5432
+nyx5432
+nyx5432
+nyx5432
+nyx5432
+nyx5432
+nyx5432
+Load labels
+Traceback (most recent call last):
+  File "Model_xgboost-production_weighted_Tian_per_veh.py", line 44, in <module>
+    train_x.fillna(-1, axis=0, inplace= True)
+AttributeError: 'NoneType' object has no attribute 'fillna'
