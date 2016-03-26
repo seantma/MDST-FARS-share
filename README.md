@@ -18,9 +18,9 @@ We use competitions in Kaggle to sharpen our skill sets. Our main goal is to get
 
 ## Models and AUC scores:
 
-| Model code                           | Submission CSV                                     | Public Score | Private Score |
-| -------------------------------------|----------------------------------------------------|--------------|---------------|
-| Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted_missing.csv | 0.87135      |	0.86657    |
-| Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted.csv         | 0.87135      |	0.86657    |
+| Model code                           | Submission CSV                                     | Public Score | Private Score |Note   |
+| -------------------------------------|----------------------------------------------------|--------------|---------------|-------|
+| Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted_missing.csv | 0.87135      |	0.86657    |No change using missing |
+| Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted.csv         | 0.87135      |	0.86657    |       |
 
   
