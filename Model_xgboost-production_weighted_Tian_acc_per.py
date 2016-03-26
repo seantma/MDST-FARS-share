@@ -128,7 +128,7 @@ param['nthread'] = 8
 
 #num_round = test.idxmax()
 
-num_round = 10
+num_round = 1000
 
 
 # In[14]:
