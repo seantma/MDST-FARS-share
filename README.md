@@ -22,5 +22,5 @@ We use competitions in Kaggle to sharpen our skill sets. Our main goal is to get
 | -------------------------------------|----------------------------------------------------|--------------|---------------|-------|
 | Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted_missing.csv | 0.87135      |	0.86657    |No change using missing |
 | Model_xgboost-production_weighted.py | fars_submit_xgb004_production_weighted.csv         | 0.87135      |	0.86657    |       |
-
+| Model_xgboost-production_weighted.py | fars_submit_xgb005_production_weighted_Tian_acc_per.csv | 0.85757    |	0.85050    | Seems like 2 tables with dummies are ok    |
   
