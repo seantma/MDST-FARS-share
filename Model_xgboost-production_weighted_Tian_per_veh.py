@@ -55,8 +55,8 @@ testX = Xtest
 
 # In[9]:
 
-dtrain = xgb.DMatrix(trainX, missing=-1, label=trainY)
-dtest = xgb.DMatrix(testX, missing=-1)
+dtrain = xgb.DMatrix(trainX, missing=NaN, label=trainY)
+dtest = xgb.DMatrix(testX, missing=NaN)
 
 
 # ### Parameter tuning

@@ -1,0 +1,20 @@
+nyx5623
+nyx5623
+nyx5623
+nyx5623
+nyx5623
+nyx5623
+nyx5623
+nyx5623
+[12:28:13] dmlc-core/include/dmlc/logging.h:245: [12:28:13] src/c_api/c_api.cc:304: Check failed: nan_missing There are NAN in the matrix, however, you did not set missing=NAN
+Load labels
+Traceback (most recent call last):
+  File "Model_xgboost-production_weighted_Tian_per_veh.py", line 58, in <module>
+    dtrain = xgb.DMatrix(trainX, missing=-1, label=trainY)
+  File "/home/tehsheng/Projects/xgboost/python-package/xgboost/core.py", line 233, in __init__
+    self._init_from_npy2d(data, missing)
+  File "/home/tehsheng/Projects/xgboost/python-package/xgboost/core.py", line 286, in _init_from_npy2d
+    ctypes.byref(self.handle)))
+  File "/home/tehsheng/Projects/xgboost/python-package/xgboost/core.py", line 97, in _check_call
+    raise XGBoostError(_LIB.XGBGetLastError())
+xgboost.core.XGBoostError: b'[12:28:13] src/c_api/c_api.cc:304: Check failed: nan_missing There are NAN in the matrix, however, you did not set missing=NAN'
