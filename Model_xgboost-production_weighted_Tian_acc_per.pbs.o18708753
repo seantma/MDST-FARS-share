@@ -1,9 +1,0 @@
-nyx5432
-nyx5432
-nyx5432
-nyx5432
-nyx5432
-nyx5432
-nyx5432
-nyx5432
-/var/spool/torque/mom_priv/jobs/18708753.nyx.arc-ts.umich.edu.SC: line 24: 24990 Segmentation fault      python Model_xgboost-production_weighted_Tian_acc_per.py

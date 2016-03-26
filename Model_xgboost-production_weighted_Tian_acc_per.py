@@ -128,7 +128,7 @@ param['nthread'] = 8
 
 #num_round = test.idxmax()
 
-num_round = 100
+num_round = 10
 
 
 # In[14]:
@@ -150,7 +150,7 @@ ypred
 
 # In[36]:
 
-predict_df = pd.DataFrame(data={'ID': alltest_df['ID'], 'DRUNK_DR': ypred})
+predict_df = pd.DataFrame(data={'ID': ID, 'DRUNK_DR': ypred})
 grouped_predict = predict_df.groupby('ID', as_index=False).mean()
 
 
